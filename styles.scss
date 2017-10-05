@@ -7,7 +7,6 @@ body {
     .header {
         height: 64px;
         display: grid;
-       // justify-content: center;
         grid-template-columns: minmax(100px,200px) auto;
     }
     .logo {
