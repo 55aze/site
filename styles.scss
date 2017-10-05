@@ -21,23 +21,23 @@ body {
         align-self: center;
         
         a{
-            font-family: "Hind";
             font-size: 24px;
             display:border-box;
             padding:0 8px;
             text-decoration: none;
-            text-transform: uppercase;
             color:#333;
         }
     }
     
     .hello{
         height: 614px;
+        position: relative;
        
         p{
             position: relative;
             top:30%;
         }
+
         .typer {
             font-size: 64px;
             line-height: 1.2;
@@ -46,6 +46,17 @@ body {
             display: block;
             line-height: 64px;
         }
+        
+        &:after {
+            content:" testt";
+            position: absolute;
+            top: 0%;
+            right:10%;
+            width:4px;
+            height:50%;
+            background:black;
+        }
+
     }
     
     .portfolio {
@@ -59,9 +70,6 @@ body {
         }
         
     }
-    
-
-    
    
     // small size  
     @media (max-width: 400px) {

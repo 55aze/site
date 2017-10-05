@@ -1,58 +1,77 @@
-/* line 1, /Users/yaorong/Desktop/new site/styles.scss */
 body {
   padding: 24px;
   margin: 0;
   max-width: 1440px;
   min-width: 320px;
-  margin: auto; }
-  /* line 7, /Users/yaorong/Desktop/new site/styles.scss */
-  body .header {
-    height: 64px;
-    display: grid;
-    grid-template-columns: minmax(100px, 200px) auto; }
-  /* line 13, /Users/yaorong/Desktop/new site/styles.scss */
-  body .logo {
-    font-family: 'Hind', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
-    background-color: black; }
-  /* line 20, /Users/yaorong/Desktop/new site/styles.scss */
-  body .nav_s {
-    justify-self: end;
-    align-self: center; }
-    /* line 24, /Users/yaorong/Desktop/new site/styles.scss */
-    body .nav_s a {
-      font-family: "Hind";
-      font-size: 24px;
-      display: border-box;
-      padding: 0 8px;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #333; }
-  /* line 35, /Users/yaorong/Desktop/new site/styles.scss */
-  body .hello {
-    height: 614px; }
-    /* line 38, /Users/yaorong/Desktop/new site/styles.scss */
-    body .hello p {
-      position: relative;
-      top: 30%; }
-    /* line 42, /Users/yaorong/Desktop/new site/styles.scss */
-    body .hello .typer {
-      font-size: 64px;
-      line-height: 1.2;
-      font-family: "Hind";
-      font-weight: bold;
-      display: block;
-      line-height: 64px; }
-  /* line 52, /Users/yaorong/Desktop/new site/styles.scss */
-  body .portfolio {
-    display: grid;
-    grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-    /* line 57, /Users/yaorong/Desktop/new site/styles.scss */
-    body .portfolio .emergency {
-      font-family: "Hind", sans-serif;
-      font-size: 20px; }
+  margin: auto;
+}
 
-/*# sourceMappingURL=styles.css.map */
+body .header {
+  height: 64px;
+  display: grid;
+  grid-template-columns: minmax(100px, 200px) auto;
+}
+
+body .logo {
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+}
+
+body .nav_s {
+  justify-self: end;
+  align-self: center;
+}
+
+body .nav_s a {
+  font-size: 24px;
+  display: border-box;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+body .hello {
+  height: 614px;
+  position: relative;
+}
+
+body .hello p {
+  position: relative;
+  top: 30%;
+}
+
+body .hello .typer {
+  font-size: 64px;
+  line-height: 1.2;
+  font-family: "Hind";
+  font-weight: bold;
+  display: block;
+  line-height: 64px;
+}
+
+body .hello:after {
+  content: " testt";
+  position: absolute;
+  top: 0%;
+  right: 10%;
+  width: 4px;
+  height: 50%;
+  background: black;
+}
+
+body .portfolio {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+body .portfolio .emergency {
+  font-family: "Hind", sans-serif;
+  font-size: 20px;
+}
+ 
+
+ /*# sourceMappingURL= styles.css.map */
