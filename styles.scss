@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+$font-title: "Inconsolata",sans-serif;
 body {
     padding: 24px;
     margin: 0;
@@ -10,51 +12,110 @@ body {
         grid-template-columns: minmax(100px,200px) auto;
     }
     .logo {
-        font-family: 'Hind', sans-serif;
+        font-family: $font-title;
         font-size: 20px;
         font-weight: 600;
         color: white;
         background-color: black;
+
+        a{
+            text-decoration: none;
+        }
     }
-    .nav_s{
+    .nav{
         justify-self: end;
         align-self: center;
+        cursor: pointer;
+        position: relative;
+        top:0;
         
-        a{
-            font-size: 24px;
-            display:border-box;
-            padding:0 8px;
-            text-decoration: none;
-            color:#333;
+        span{
+            height:2px;
+            width:32px;
+            background: black;
+            margin-bottom:8px;
+            display: block;
+            transform: rotate(0);
+            transition: transform 0.5s ease
+                        opacity 0.5s ease 
         }
+
+        span:first-child:hover{
+            transform: rotate(45deg);
+            transform-origin:0 0;  
+            transition: transform 0.5s ease;            
+        }
+        span:last-child:hover{
+            transform: rotate(-45deg);
+            transform-origin:0 0;  
+            transition: transform 0.5s ease;            
+        }
+        span:nth-child(2):hover{
+            transform: translateX(-50px);
+            opacity: 0;
+            transform-origin:0 0;  
+            transition: transform 0.5s ease;            
+        }
+
+
+
+        // div::before {
+        //     width:32px;
+        //     height:2px;
+        //     background: black;
+        //     content: " ";
+        //     position: absolute;
+        //     transform: all 0.5s ease;
+        // }
+
+        // div:nth-child(1)::before {
+        //     top:0;
+        //     right:16px;
+        // }
+        // div:nth-child(2)::before {
+        //     top:10px;
+        //     right:16px;
+        // }
+        // div:nth-child(3)::before {
+        //     top:20px;
+        //     right:16px;
+        // }
+      
     }
     
     .hello{
-        height: 614px;
+        height: 100vh;
         position: relative;
        
         p{
             position: relative;
             top:30%;
+            .typer {
+                font-size: 48px;
+                line-height: 1.2;
+                font-family:$font-title;
+                font-weight: 200;
+                display: block;
+                line-height: 64px;
+            }
+        }
+        &::before {
+            content:" ";
+            position: absolute;
+            top: 70%;
+            right:10%;
+            width:2px;
+            height:20%;
+            background:black;
+            transform:scale(1,0);
+            transition: transform 2s ease;
+            transform-origin: center bottom;
         }
 
-        .typer {
-            font-size: 64px;
-            line-height: 1.2;
-            font-family: "Hind";
-            font-weight: bold;
-            display: block;
-            line-height: 64px;
-        }
-        
-        &:after {
-            content:" testt";
-            position: absolute;
-            top: 0%;
-            right:10%;
-            width:4px;
-            height:50%;
-            background:black;
+        &:hover::before{
+            transform:scale(1,1); 
+            transition: transform 2s ease;
+            transform-origin: center top;
         }
 
     }
@@ -65,7 +126,8 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
         .emergency {
-            font-family: "Hind", sans-serif;
+            font-family: $font-title;
+            font-weight: 200;
             font-size: 20px;
         }
         

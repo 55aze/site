@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
 body {
   padding: 24px;
   margin: 0;
@@ -13,28 +14,56 @@ body .header {
 }
 
 body .logo {
-  font-family: 'Hind', sans-serif;
+  font-family: "Inconsolata", sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: white;
   background-color: black;
 }
 
-body .nav_s {
-  justify-self: end;
-  align-self: center;
+body .logo a {
+  text-decoration: none;
 }
 
-body .nav_s a {
-  font-size: 24px;
-  display: border-box;
-  padding: 0 8px;
-  text-decoration: none;
-  color: #333;
+body .nav {
+  justify-self: end;
+  align-self: center;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+body .nav span {
+  height: 2px;
+  width: 32px;
+  background: black;
+  margin-bottom: 8px;
+  display: block;
+  transform: rotate(0);
+  transition: transform 0.5s ease opacity 0.5s ease;
+}
+
+body .nav span:first-child:hover {
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+  transition: transform 0.5s ease;
+}
+
+body .nav span:last-child:hover {
+  transform: rotate(-45deg);
+  transform-origin: 0 0;
+  transition: transform 0.5s ease;
+}
+
+body .nav span:nth-child(2):hover {
+  transform: translateX(-50px);
+  opacity: 0;
+  transform-origin: 0 0;
+  transition: transform 0.5s ease;
 }
 
 body .hello {
-  height: 614px;
+  height: 100vh;
   position: relative;
 }
 
@@ -43,23 +72,32 @@ body .hello p {
   top: 30%;
 }
 
-body .hello .typer {
-  font-size: 64px;
+body .hello p .typer {
+  font-size: 48px;
   line-height: 1.2;
-  font-family: "Hind";
-  font-weight: bold;
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 200;
   display: block;
   line-height: 64px;
 }
 
-body .hello:after {
-  content: " testt";
+body .hello::before {
+  content: " ";
   position: absolute;
-  top: 0%;
+  top: 70%;
   right: 10%;
-  width: 4px;
-  height: 50%;
+  width: 2px;
+  height: 20%;
   background: black;
+  transform: scale(1, 0);
+  transition: transform 2s ease;
+  transform-origin: center bottom;
+}
+
+body .hello:hover::before {
+  transform: scale(1, 1);
+  transition: transform 2s ease;
+  transform-origin: center top;
 }
 
 body .portfolio {
@@ -69,7 +107,8 @@ body .portfolio {
 }
 
 body .portfolio .emergency {
-  font-family: "Hind", sans-serif;
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 200;
   font-size: 20px;
 }
  
