@@ -35,9 +35,9 @@ body .nav {
 
 body .nav span {
   height: 2px;
-  width: 32px;
+  width: 24px;
   background: black;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: block;
   transform: rotate(0);
   transition: transform 0.5s ease opacity 0.5s ease;
