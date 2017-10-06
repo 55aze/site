@@ -43,21 +43,8 @@ body .nav span {
   transition: transform 0.5s ease opacity 0.5s ease;
 }
 
-body .nav span:first-child:hover {
+body .nav span .mouse-hover {
   transform: rotate(45deg);
-  transform-origin: 0 0;
-  transition: transform 0.5s ease;
-}
-
-body .nav span:last-child:hover {
-  transform: rotate(-45deg);
-  transform-origin: 0 0;
-  transition: transform 0.5s ease;
-}
-
-body .nav span:nth-child(2):hover {
-  transform: translateX(-50px);
-  opacity: 0;
   transform-origin: 0 0;
   transition: transform 0.5s ease;
 }
@@ -100,16 +87,30 @@ body .hello:hover::before {
   transform-origin: center top;
 }
 
-body .portfolio {
+body .work-container {
   display: grid;
   grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-body .portfolio .emergency {
+body .work-container .work {
   font-family: "Inconsolata", sans-serif;
+  position: relative;
+  padding-top: 10px;
+}
+
+body .work-container .work .work-title {
   font-weight: 200;
   font-size: 20px;
+}
+
+body .work-container .work::before {
+  content: " ";
+  position: absolute;
+  height: 4px;
+  width: 80%;
+  background: black;
+  top: 0;
 }
  
 
