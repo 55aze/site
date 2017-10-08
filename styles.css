@@ -25,27 +25,141 @@ body .logo a {
   text-decoration: none;
 }
 
-body .nav {
+body .ham {
   justify-self: end;
   align-self: center;
   cursor: pointer;
   position: relative;
   top: 0;
+  border: none;
+  background: transparent;
 }
 
-body .nav span {
+body .ham span {
   height: 2px;
-  width: 24px;
   background: black;
   margin-bottom: 4px;
   display: block;
   transform: rotate(0);
-  transition: transform 0.5s ease opacity 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
-body .nav span .mouse-hover {
+body .ham span:first-child, body .ham span:last-child {
+  width: 24px;
+}
+
+body .ham span:nth-child(2) {
+  width: 32px;
+}
+
+body .ham .ham_hover {
+  transition: all 0.5s ease;
+  background-color: orange;
+}
+
+body .ham .ham_hover:first-child, body .ham .ham_hover:last-child {
+  width: 20px;
+}
+
+body .ham .ham_hover:first-child {
+  transform: translateX(-4px) rotate(-45deg);
+}
+
+body .ham .ham_hover:last-child {
+  transform: translateX(-4px) rotate(45deg);
+}
+
+body .menu {
+  transform: translatex(-100vw);
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 1;
+  text-align: center;
+}
+
+body .menu .close {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background: transparent;
+  border: none;
+}
+
+body .menu .close span {
+  height: 2px;
+  width: 24px;
+  background: white;
+  position: absolute;
+  top: 0px;
+}
+
+body .menu .close span:first-child {
   transform: rotate(45deg);
-  transform-origin: 0 0;
+}
+
+body .menu .close span:last-child {
+  transform: rotate(-45deg);
+}
+
+body .menu .close:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+body .menu_show {
+  transform: scaleX(1);
+  transform-origin: right top;
+  transition: transform 0.5s ease;
+}
+
+body .menu ul {
+  position: relative;
+  top: 30%;
+  display: inline-block;
+  padding: 0px;
+  margin: auto;
+  font-size: 24px;
+  font-family: "Inconsolata", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+body .menu ul li {
+  position: relative;
+  padding: 0 8px;
+  margin-bottom: 24px;
+  transform: scale(1, 1);
+}
+
+body .menu ul li::before {
+  content: " ";
+  height: 2px;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  background: white;
+  position: absolute;
+  transform: scale3d(0, 1, 1);
+  transform-origin: right center;
+  transition: transform 0.5s ease;
+}
+
+body .menu ul li:hover {
+  top: -2px;
+}
+
+body .menu ul li:hover::before {
+  transform: scale3d(1, 1, 1);
+  transform-origin: left center;
   transition: transform 0.5s ease;
 }
 
@@ -88,6 +202,7 @@ body .hello:hover::before {
 }
 
 body .work-container {
+  padding: 10px 40px;
   display: grid;
   grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -96,7 +211,8 @@ body .work-container {
 body .work-container .work {
   font-family: "Inconsolata", sans-serif;
   position: relative;
-  padding-top: 10px;
+  padding: 10px 0;
+  height: 200px;
 }
 
 body .work-container .work .work-title {

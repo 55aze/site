@@ -1,24 +1,37 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 " rel="stylesheet">
 
+<link href="./normalise.css" rel="stylesheet">
 <link href="./styles.css" rel="stylesheet">
 <script src="./anime-master/anime.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js" type="text/javascript"></script>
 <script src="./main.js"></script>
-<script
-src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
+
 
 <body>
     <section class="header">
         <div class="logo">
             <a href="#">Logo</a>
         </div>    
-        <div class="nav">
+        <button class="ham">
             <span></span>
             <span></span>
             <span></span>
+        </button>
+
+        <div class="menu">
+            <button class = "close">
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li>About me</li>
+                <li>Works</li>
+                <li>Contact</li>
+            </ul>
         </div>
+
     </section>
     <section>
         <div class="hello">
@@ -30,6 +43,7 @@ crossorigin="anonymous"></script>
         <div class = "work-container">
             <div class = "work emergency">
                 <span class = "work-title">Emergency Apparel</span>
+            </br>
                 <span>How to design better life for our olderlies?</span>
             </div>
             <div class = "work color-melody">
