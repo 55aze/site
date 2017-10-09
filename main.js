@@ -15,12 +15,10 @@ $(document).ready(function(){
     //   });
 
     $(".ham").mouseenter(function(){ 
-        //alert ("hovered");
         $(".ham > span").addClass("ham_hover");
     });
 
     $(".ham").mouseleave(function(){ 
-        //alert ("hovered");
         $(".ham > span").removeClass("ham_hover");
     });
 
@@ -49,7 +47,6 @@ $(document).ready(function(){
                 return i * 100;
               },
             offset:"-=860"            
-            
         })
       //  $(".menu").addClass("menu_show");
     });

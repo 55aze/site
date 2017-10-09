@@ -115,7 +115,7 @@ body {
         ul{
             position: relative;
             top:30%;
-            display:inline-block;
+           display:block;
             padding:0px;
             margin:auto;
             font-size:24px;
@@ -126,37 +126,45 @@ body {
             color:white;   
             
             
-            li{
+            li{ 
                 display: block;
-                padding:0 8px;
                 position: relative;
-                height:100%;
                 margin-bottom:24px; 
-                transform: translateY(-100px);
-                overflow: hidden;
                 top:0;
 
-                &::before{
-                    content: " ";
-                    height:2px;
-                    top: 12px;;
-                    left:0;
-                    width:100%;
-                    background:white;
-                    position: absolute;
-                    transform:scale3d(0,1,1);
-                    transform-origin: right center;
-                    transition: transform 0.5s ease;
+                p{
+                    display: inline-block;
+                    padding:0 8px;             
+                    &::before{
+                        content: " ";
+                        height:2px;
+                        top: 12px;;
+                        left:0;
+                        width:100%;
+                        background:white;
+                        position: absolute;
+                        transform:scale3d(0,1,1);
+                        transform-origin: right center;
+                        transition: transform 0.5s ease;
+                    }
+
+                    &:hover{
+                        &::before{
+                            transform:scale3d(1,1,1);
+                            transform-origin: left center;  
+                            transition: transform 0.5s ease;                
+                            }
+
+                    }
+    
+                   // position: absolute;
                 }
 
+              
                 &:hover{
                     top:-2px;
                     cursor: pointer;
-                    &::before{
-                        transform:scale3d(1,1,1);
-                        transform-origin: left center;  
-                        transition: transform 0.5s ease;                
-                        }
+                   
                 }
 
             }           

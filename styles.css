@@ -123,7 +123,7 @@ body .menu_show {
 body .menu ul {
   position: relative;
   top: 30%;
-  display: inline-block;
+  display: block;
   padding: 0px;
   margin: auto;
   font-size: 24px;
@@ -136,16 +136,17 @@ body .menu ul {
 
 body .menu ul li {
   display: block;
-  padding: 0 8px;
   position: relative;
-  height: 100%;
   margin-bottom: 24px;
-  transform: translateY(-100px);
-  overflow: hidden;
   top: 0;
 }
 
-body .menu ul li::before {
+body .menu ul li p {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+body .menu ul li p::before {
   content: " ";
   height: 2px;
   top: 12px;
@@ -158,15 +159,15 @@ body .menu ul li::before {
   transition: transform 0.5s ease;
 }
 
-body .menu ul li:hover {
-  top: -2px;
-  cursor: pointer;
-}
-
-body .menu ul li:hover::before {
+body .menu ul li p:hover::before {
   transform: scale3d(1, 1, 1);
   transform-origin: left center;
   transition: transform 0.5s ease;
+}
+
+body .menu ul li:hover {
+  top: -2px;
+  cursor: pointer;
 }
 
 body .hello {
