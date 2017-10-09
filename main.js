@@ -25,50 +25,44 @@ $(document).ready(function(){
     });
 
     $(".ham").click(function(){
-        myTimeline
+        var openTimeline = anime.timeline();
+        openTimeline
         .add({
           targets: '.menu',
-          translateX: "100vm",
+          translateX: ["100vm",'0'],
           easing: "easeOutExpo",
           duration: 860,
         })
-        
-       
-       
-        // anime({
-        //     targets: ".menu",
-        //     scaleX:  {
-        //         value: 1,
-        //         duration:2000,
-        //     },
-        //     easing: 'easeOutExpo',
-        //     // scaleY: {
-        //     //     value:1,
-        //     //     duration:300,
-        //     //     delay:500,
-        //     //     transformOrigin:'center top'
-        //     // },
+        .add({
+            targets:'.close',
+            opacity:1,
+            easing: "easeOutExpo",
+            duration:860,
+            offset:"-=200"
+        })
+        .add({
+            targets: '.menu ul li',
+            translateY:["-56px","0"],
+            opacity:1,
+            duration:860,
+            delay: function(el, i, l) {
+                return i * 100;
+              },
+            offset:"-=860"            
             
-        //     loop:false
-        // });
-
-        // anime({
-        //     targets:'.menu ul li',
-        //     translateY:20,
-        //     opacity:1,
-        //     delay: function()
-        // })
+        })
       //  $(".menu").addClass("menu_show");
     });
 
     $(".close").click(function(){
-        anime({
+        var closeTimeline = anime.timeline();
+        closeTimeline
+        .add({
             targets:".menu",
-            scaleY:0,
-            opacity:0,
+            translateX: ['0','100vm'],            
             duration:500,
             loop:false
-        });
+        })
         //$(".menu").removeClass("menu_show");
     });
 
