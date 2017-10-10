@@ -3,17 +3,6 @@ $(document).ready(function(){
 
 
     //hamberger button
-
-    // var hamburg_hover = anime({
-    //     targets: '.nav span',
-    //     // translateY: function(el, i) {
-    //     //     return 6 +(-6*i);
-    //     // },
-    //     duration: 500,
-    //     loop: false,
-    //     autoplay:false
-    //   });
-
     $(".ham").mouseenter(function(){ 
         $(".ham > span").addClass("ham_hover");
     });
@@ -39,10 +28,11 @@ $(document).ready(function(){
             offset:"-=200"
         })
         .add({
-            targets: '.menu ul li',
+            targets: '.menu ul li span',
             translateY:["-56px","0"],
             opacity:1,
             duration:860,
+            easing: "easeOutExpo",
             delay: function(el, i, l) {
                 return i * 100;
               },

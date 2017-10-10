@@ -137,21 +137,26 @@ body .menu ul {
 body .menu ul li {
   display: block;
   position: relative;
-  margin-bottom: 24px;
+  overflow: hidden;
+  height: 60px;
+  transition: background-color 0.5s ease;
   top: 0;
 }
 
-body .menu ul li p {
-  display: inline-block;
+body .menu ul li span {
+  position: absolute;
+  top: 0;
+  left: 20%;
   padding: 0 8px;
+  box-sizing: border-box;
 }
 
-body .menu ul li p::before {
+body .menu ul li span::before {
   content: " ";
   height: 2px;
+  width: 100%;
   top: 12px;
   left: 0;
-  width: 100%;
   background: white;
   position: absolute;
   transform: scale3d(0, 1, 1);
@@ -159,14 +164,18 @@ body .menu ul li p::before {
   transition: transform 0.5s ease;
 }
 
-body .menu ul li p:hover::before {
+body .menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body .menu ul li:hover span {
+  top: -2px;
+}
+
+body .menu ul li:hover span::before {
   transform: scale3d(1, 1, 1);
   transform-origin: left center;
   transition: transform 0.5s ease;
-}
-
-body .menu ul li:hover {
-  top: -2px;
   cursor: pointer;
 }
 
