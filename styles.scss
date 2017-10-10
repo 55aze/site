@@ -9,6 +9,9 @@ body {
     
     .header {
         height: 64px;
+        top:0;
+        bottom:0;
+        position: fixed;
         display: grid;
         grid-template-columns: minmax(100px,200px) auto;
     }
@@ -28,8 +31,8 @@ body {
         align-self: center;
         cursor: pointer;
         position: relative;
-        top:0;
         border:none;
+        padding: 10px 10px;
         background: transparent;
 
         span{
@@ -79,12 +82,13 @@ body {
  //       transition: all 0.5s ease;
 
         .close{
-            position: absolute;
+            position: relative;
             opacity:0;
             top:10%;
             right:10%;
             background:transparent;
             border: none;
+            padding:16px;
 
             span{
                 height:2px;
@@ -106,11 +110,6 @@ body {
             }  
         }
 
-        &_show{
-            transform:scaleX(1);
-            transform-origin: right top;
-            transition: transform 0.5s ease;
-        }
 
         ul{
             position: relative;
@@ -130,13 +129,13 @@ body {
                 display: block;
                 position: relative;
                 overflow: hidden;
-                height:60px;
+                padding:24px 0;
                 transition: background-color 0.5s ease;                
                 top:0;
 
                 span{
                     position: absolute; 
-                    top:0; left:20%;
+                    top:calc(50% - 12px); left:20%;
                     padding:0 8px;      
                     box-sizing: border-box;       
                     &::before{
@@ -156,7 +155,7 @@ body {
                 &:hover{
                     background-color:rgba(255, 255, 255, 0.05);
                     span {
-                        top:-2px;                     
+                        top:calc(50% - 10px);                     
                         &::before{
                             transform:scale3d(1,1,1);
                             transform-origin: left center;  

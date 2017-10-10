@@ -138,14 +138,14 @@ body .menu ul li {
   display: block;
   position: relative;
   overflow: hidden;
-  height: 60px;
+  padding: 24px 0;
   transition: background-color 0.5s ease;
   top: 0;
 }
 
 body .menu ul li span {
   position: absolute;
-  top: 0;
+  top: calc(50% - 12px);
   left: 20%;
   padding: 0 8px;
   box-sizing: border-box;
@@ -169,7 +169,7 @@ body .menu ul li:hover {
 }
 
 body .menu ul li:hover span {
-  top: -2px;
+  top: calc(50% - 10px);
 }
 
 body .menu ul li:hover span::before {
