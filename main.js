@@ -9,7 +9,14 @@ $(document).ready(function(){
 
  
     /*fixed header*/
-
+    $(window).scroll(function(){
+        var y = window.pageYOffset;
+        if (y > 100) {
+            $('header').addClass("header-scroll");
+          } else {
+            $('header').removeClass("header-scroll");
+          }
+    });
 
 
    /*hamburger button*/
@@ -88,7 +95,6 @@ $(document).ready(function(){
     });
 
     //open menu
-   
     $(".ham").click(function(){
         app.revealMenu();
     });

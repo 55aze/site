@@ -1,41 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata");
 body {
-  padding: 24px;
-  margin: 0;
   max-width: 1440px;
   min-width: 320px;
-  margin: auto;
+  padding: 24px;
+  margin: 0;
 }
 
-body .header {
-  height: 64px;
-  display: grid;
-  grid-template-columns: minmax(100px, 200px) auto;
+body header {
+  top: 0;
+  padding-top: 24px;
+  width: calc(100% - 48px);
+  position: fixed;
+  background: white;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
-body .logo {
+body header nav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  transition: all .2s ease;
+}
+
+body header nav .logo {
   font-family: "Inconsolata", sans-serif;
+  display: inline-block;
   font-size: 20px;
   font-weight: 600;
   color: white;
   background-color: black;
 }
 
-body .logo a {
+body header nav .logo a {
   text-decoration: none;
 }
 
-body .ham {
-  justify-self: end;
-  align-self: center;
+body header nav .ham {
   cursor: pointer;
-  position: relative;
-  top: 0;
+  padding: 8px;
   border: none;
   background: transparent;
 }
 
-body .ham span {
+body header nav .ham span {
   height: 2px;
   background: black;
   margin-bottom: 4px;
@@ -44,29 +52,40 @@ body .ham span {
   transition: transform 0.5s ease;
 }
 
-body .ham span:first-child, body .ham span:last-child {
+body header nav .ham span:first-child, body header nav .ham span:last-child {
   width: 24px;
 }
 
-body .ham span:nth-child(2) {
+body header nav .ham span:nth-child(2) {
   width: 32px;
 }
 
-body .ham .ham_hover {
+body header nav .ham .ham_hover {
   transition: all 0.5s ease;
   background-color: orange;
 }
 
-body .ham .ham_hover:first-child, body .ham .ham_hover:last-child {
+body header nav .ham .ham_hover:first-child, body header nav .ham .ham_hover:last-child {
   width: 20px;
 }
 
-body .ham .ham_hover:first-child {
+body header nav .ham .ham_hover:first-child {
   transform: translateX(-4px) rotate(-45deg);
 }
 
-body .ham .ham_hover:last-child {
+body header nav .ham .ham_hover:last-child {
   transform: translateX(-4px) rotate(45deg);
+}
+
+body header.header-scroll {
+  box-shadow: 0px 16px 0px 0px rgba(255, 255, 255, 0.82);
+  padding-top: 16px;
+  transition: all .2s ease;
+}
+
+body header.header-scroll nav {
+  align-items: center;
+  transition: align-items .2s ease;
 }
 
 body .menu {
@@ -85,12 +104,11 @@ body .menu {
 }
 
 body .menu .close {
-  position: absolute;
+  position: relative;
   opacity: 0;
-  top: 10%;
-  right: 10%;
   background: transparent;
   border: none;
+  padding: 16px;
 }
 
 body .menu .close span {
@@ -112,12 +130,6 @@ body .menu .close span:last-child {
 body .menu .close:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-body .menu_show {
-  transform: scaleX(1);
-  transform-origin: right top;
-  transition: transform 0.5s ease;
 }
 
 body .menu ul {

@@ -1,73 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 $font-title: "Inconsolata",sans-serif;
 body {
-    padding: 24px;
-    margin: 0;
     max-width: 1440px;
     min-width: 320px;
-    margin: auto;
+    padding: 24px;
+    margin: 0;
     
-    .header {
-        height: 64px;
+    header {
         top:0;
-        bottom:0;
+        padding-top:24px;
+        width:calc(100% - 48px);
         position: fixed;
-        display: grid;
-        grid-template-columns: minmax(100px,200px) auto;
-    }
-    .logo {
-        font-family: $font-title;
-        font-size: 20px;
-        font-weight: 600;
-        color: white;
-        background-color: black;
-
-        a{
-            text-decoration: none;
-        }
-    }
-    .ham{
-        justify-self: end;
-        align-self: center;
-        cursor: pointer;
-        position: relative;
-        border:none;
-        padding: 10px 10px;
-        background: transparent;
-
-        span{
-            height:2px;
-            background: black;
-            margin-bottom:4px;
-            display: block;
-            transform: rotate(0);
-            transition: transform 0.5s ease; 
+        background: white;
+        box-sizing: border-box;
+        z-index: 1;
             
-            &:first-child, &:last-child {
-                width:24px;
+        nav{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            transition: all .2s ease;            
+        
+            .logo {
+                font-family: $font-title;
+                display: inline-block;  
+                font-size: 20px;
+                font-weight: 600;
+                color: white;
+                background-color: black;
+
+                a{
+                    text-decoration: none;
+                }
             }
 
-            &:nth-child(2){
-                width:32px;
+            .ham{
+                cursor: pointer;
+                padding:8px;
+                border:none;
+                background: transparent;
+
+                span{
+                    height:2px;
+                    background: black;
+                    margin-bottom:4px;
+                    display: block;
+                    transform: rotate(0);
+                    transition: transform 0.5s ease; 
+                    
+                    &:first-child, &:last-child {
+                        width:24px;
+                    }
+
+                    &:nth-child(2){
+                        width:32px;
+                    }
+                }
+
+                .ham_hover {
+                    transition: all 0.5s ease;   
+                    background-color: orange;
+                    &:first-child, &:last-child {
+                        width:20px;
+                    }
+                    &:first-child{
+                        transform: translateX(-4px) rotate(-45deg);            
+                    }
+                
+                    &:last-child{
+                        transform:translateX(-4px) rotate(45deg);
+                    }
+                }
             }
         }
 
-        .ham_hover {
-            transition: all 0.5s ease;   
-            background-color: orange;
-            &:first-child, &:last-child {
-                width:20px;
-            }
-            &:first-child{
-                transform: translateX(-4px) rotate(-45deg);            
-            }
-           
-            &:last-child{
-                transform:translateX(-4px) rotate(45deg);
+        &.header-scroll{
+            box-shadow: 0px 16px 0px 0px rgba(255,255,255,0.82);;
+            padding-top:16px;
+            transition: all .2s ease;                       
+            nav{
+                align-items: center;     
+                transition: align-items .2s ease;           
             }
         }
-
     }
+
+    
 
     .menu{
         transform: translateX(100vw);
@@ -84,8 +102,6 @@ body {
         .close{
             position: relative;
             opacity:0;
-            top:10%;
-            right:10%;
             background:transparent;
             border: none;
             padding:16px;
