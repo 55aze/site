@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 $font-title: "Inconsolata",sans-serif;
+$font-color-primary: black;
+$font-color-secondary: white;
+$background: white;
 body {
     max-width: 1440px;
     min-width: 320px;
     padding: 24px;
     margin: 0;
+    background-color: $background;
     
     header {
         top:0;
@@ -97,7 +101,6 @@ body {
         background-color:black;
         z-index:1;
         text-align: center;
- //       transition: all 0.5s ease;
 
         .close{
             position: relative;
@@ -188,6 +191,7 @@ body {
     
     .hello{
         height: 100vh;
+        padding: 0 100px;
         position: relative;
        
         p{
@@ -222,19 +226,32 @@ body {
         }
 
     }
+   
+    .work{
+        padding:10px 40px;
+        position: relative;
+        
+        .title{
+            text-transform: uppercase;
+            display: block;
+            font-size: 200px;
+            position: absolute;
+            left:0;
+            top:0;
+            color:rgba(0,0,0,0.05);
+        }
     
-    .work-container {
-        padding:10px 40px;;
+        .project-container {
         display: grid; 
         grid-gap: 16px;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
-        .work {
+        .project {
             font-family: $font-title;
             position: relative;
             padding: 10px 0;
             height:200px;
-            .work-title{
+            .project-title{
                 font-weight: 200;
                 font-size: 20px;
             }
@@ -242,8 +259,8 @@ body {
         &::before {
             content:" ";
             position: absolute;
-            height: 4px;
-            width:80%;
+            height: 8px;
+            width:40PX;
             background:black;
             top:0;
         }
@@ -251,6 +268,7 @@ body {
         }
         
     }
+}
    
     // small size  
     @media (max-width: 400px) {

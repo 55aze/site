@@ -4,6 +4,7 @@ body {
   min-width: 320px;
   padding: 24px;
   margin: 0;
+  background-color: white;
 }
 
 body header {
@@ -193,6 +194,7 @@ body .menu ul li:hover span::before {
 
 body .hello {
   height: 100vh;
+  padding: 0 100px;
   position: relative;
 }
 
@@ -229,30 +231,44 @@ body .hello:hover::before {
   transform-origin: center top;
 }
 
-body .work-container {
+body .work {
   padding: 10px 40px;
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  position: relative;
 }
 
-body .work-container .work {
+body .work .title {
+  text-transform: uppercase;
+  display: block;
+  font-size: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0, 0, 0, 0.05);
+}
+
+body .work .project-container {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+body .work .project-container .project {
   font-family: "Inconsolata", sans-serif;
   position: relative;
   padding: 10px 0;
   height: 200px;
 }
 
-body .work-container .work .work-title {
+body .work .project-container .project .project-title {
   font-weight: 200;
   font-size: 20px;
 }
 
-body .work-container .work::before {
+body .work .project-container .project::before {
   content: " ";
   position: absolute;
-  height: 4px;
-  width: 80%;
+  height: 8px;
+  width: 40PX;
   background: black;
   top: 0;
 }
